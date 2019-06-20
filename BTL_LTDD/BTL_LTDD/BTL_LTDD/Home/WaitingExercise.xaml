@@ -1,0 +1,54 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BTL_LTDD.Home.WaitingExercise">
+    <ContentPage.Content>
+        <RelativeLayout Margin="0,0,0,0">
+            <ContentView RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}" RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}">
+                <Grid >
+                    <Image Source="background.jpg" VerticalOptions="Fill" HorizontalOptions="Fill" Aspect="Fill"/>
+                    <Frame x:Name="frameView" CornerRadius="20" Padding="10" BackgroundColor="WhiteSmoke" Margin="30,20">
+                        <Grid RowSpacing="5" ColumnSpacing="0" Margin="10,5" BackgroundColor="WhiteSmoke" >
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="*"/>
+                            </Grid.RowDefinitions>
+                            <StackLayout Grid.Column="0" Grid.Row="0" Orientation="Vertical">
+                                <Label Text="Time Rest"   FontSize="Large" HorizontalTextAlignment="Center"/>
+                                <ProgressBar Progress="0" x:Name="progressTime" 
+                            PropertyChanged="ChangedProperty"  
+                            ProgressColor="DodgerBlue" HorizontalOptions="CenterAndExpand" 
+                            VerticalOptions="CenterAndExpand"  />
+                            </StackLayout>
+                            <Frame  Grid.Row="1" Grid.Column="0"  BackgroundColor="DodgerBlue" CornerRadius="20">
+                                <StackLayout>
+                                   
+                                        <Label Text="Next Exercise"   FontSize="Large" HorizontalOptions="CenterAndExpand"/>
+                                        <StackLayout Orientation="Horizontal">
+                                            <Label x:Name="NameExercise"  FontSize="Medium" HorizontalOptions="StartAndExpand"/>
+                                            <Label x:Name="TimeExercise"  FontSize="Small" FontAttributes="Italic"
+                           HorizontalOptions="StartAndExpand" />
+                                        </StackLayout>
+                                   
+                                </StackLayout>
+                            </Frame>
+                           
+
+
+
+
+
+                        </Grid>
+                    </Frame>
+                </Grid>
+            </ContentView>
+        </RelativeLayout>
+
+
+
+    </ContentPage.Content>
+</ContentPage>

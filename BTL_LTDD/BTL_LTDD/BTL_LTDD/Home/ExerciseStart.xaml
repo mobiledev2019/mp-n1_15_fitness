@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:BTL_LTDD"
+             x:Class="BTL_LTDD.Home.ExerciseStart">
+    <ContentPage.Content>
+        <RelativeLayout Margin="0,0,0,0">
+            <ContentView RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=1}" RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}">
+                <Grid >
+                    <Image Source="background.jpg" VerticalOptions="Fill" HorizontalOptions="Fill" Aspect="Fill"/>
+                    <Frame x:Name="frameView" CornerRadius="20" Padding="10" BackgroundColor="WhiteSmoke" Margin="30,20">
+                        <Grid RowSpacing="5" ColumnSpacing="0" Margin="10,5" BackgroundColor="WhiteSmoke" >
+                            
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="30"/>
+                                    <RowDefinition Height="40"/>
+                                </Grid.RowDefinitions>
+                                <Image x:Name="image" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" />
+                                <Label x:Name="nameExercise" Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2"  FontSize="Medium" FontAttributes="Italic"/>
+                                <Label x:Name="repNumber" Grid.Row="1" Grid.Column="2" FontSize="Medium" FontAttributes="Italic"/>
+                                <Button x:Name="btnOK" Text="OK" Grid.Row="2" Grid.Column="1" BorderRadius="30" Clicked="buttonClicked" BackgroundColor="DodgerBlue"/>
+                           
+                        </Grid>
+                    </Frame>
+                </Grid>
+            </ContentView>
+        </RelativeLayout>
+
+        
+
+    </ContentPage.Content>
+</ContentPage>

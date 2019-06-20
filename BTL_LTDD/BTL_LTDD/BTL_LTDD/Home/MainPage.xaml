@@ -1,0 +1,89 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:BTL_LTDD"
+             
+             x:Class="BTL_LTDD.MainPage"
+             Padding="0,20,0,20"
+             Title="Home">
+    <ContentPage.Resources>
+        <Style x:Key="defaultLabel" TargetType="Label">
+            <Setter Property="FontSize" Value="Large"/>
+            <Setter Property="HorizontalTextAlignment" Value="Center"/>
+            <Setter Property="FontAttributes" Value="Italic"/>
+        </Style>
+        <Style x:Key="defaultImageButton" TargetType="ImageButton">
+            <Setter Property="HorizontalOptions" Value="CenterAndExpand"/>
+            <Setter Property="VerticalOptions" Value="CenterAndExpand"/>
+        </Style>
+
+    </ContentPage.Resources>
+
+
+    <Grid RowSpacing="1">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="30"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Label Text="Thể dục người lớn" Style="{StaticResource defaultLabel}" Grid.Row="0" Grid.Column="0"/>
+        <ImageButton Source="nguoilon.jpg"
+                         Style="{StaticResource defaultImageButton}"
+                         Clicked="onAdultFitnessNav"
+                         Grid.Row="1" Grid.Column="0">
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal">
+                        <VisualState.Setters>
+                            <Setter Property="Scale"
+                            Value="1" />
+                        </VisualState.Setters>
+                    </VisualState>
+
+                    <VisualState x:Name="Pressed">
+                        <VisualState.Setters>
+                            <Setter Property="Scale"
+                            Value="0.9" />
+                        </VisualState.Setters>
+                    </VisualState>
+
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+        </ImageButton>
+        
+        <Label Text="Thể dục trẻ em" Style="{StaticResource defaultLabel}"
+                   Grid.Row="2" Grid.Column="0"/>
+        <ImageButton Source="treem.jpg"
+                     Style="{StaticResource defaultImageButton}"
+                     Clicked="onChildrenFitnessNav"
+                     Grid.Row="3" Grid.Column="0">
+            <VisualStateManager.VisualStateGroups>
+                <VisualStateGroup x:Name="CommonStates">
+                    <VisualState x:Name="Normal">
+                        <VisualState.Setters>
+                            <Setter Property="Scale"
+                            Value="1" />
+                        </VisualState.Setters>
+                    </VisualState>
+
+                    <VisualState x:Name="Pressed">
+                        <VisualState.Setters>
+                            <Setter Property="Scale"
+                            Value="0.9" />
+                        </VisualState.Setters>
+                    </VisualState>
+
+                </VisualStateGroup>
+            </VisualStateManager.VisualStateGroups>
+        </ImageButton>
+
+
+    </Grid>
+
+
+
+</ContentPage>

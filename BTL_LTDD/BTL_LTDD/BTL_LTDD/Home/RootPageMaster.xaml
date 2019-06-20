@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BTL_LTDD.RootPageMaster"
+             xmlns:local="clr-namespace:BTL_LTDD"
+             Padding="0,20,0,0"
+			 Icon="menu.png"
+             Title="Menu"
+             BackgroundColor="DodgerBlue">
+
+    <StackLayout>
+        <Label Text="Menu" FontSize="Large" FontAttributes="Bold" HorizontalTextAlignment="Center" Margin="0,0,0,20" />
+        <ListView x:Name="listView" x:FieldModifier="public" BackgroundColor="AliceBlue">
+            <ListView.ItemsSource>
+                <x:Array Type="{x:Type local:RootPageMenuItem}">
+                    <local:RootPageMenuItem Title="Home" IconSource="home.png" TargetType="{x:Type local:MainPage}" />
+                    <local:RootPageMenuItem Title="Reminder" IconSource="reminder.png" TargetType="{x:Type local:RemindersPage}"  />
+                    <local:RootPageMenuItem Title="Restore"  IconSource="restore.png"  TargetType="{x:Type local:SettingPage}"  />
+                </x:Array>
+            </ListView.ItemsSource>
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid Padding="5,10">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="30"/>
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Image Source="{Binding IconSource}" />
+                            <Label Grid.Column="1" Text="{Binding Title}" FontAttributes="Italic" FontSize="Medium" />
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </StackLayout>
+</ContentPage>

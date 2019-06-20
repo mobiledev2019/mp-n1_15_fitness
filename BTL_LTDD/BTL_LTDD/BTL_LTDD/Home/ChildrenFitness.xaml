@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BTL_LTDD.ChildrenFitness"
+             Title="Children Fitness"
+             BackgroundColor="WhiteSmoke">
+    <ContentPage.Resources>
+        <Style x:Key="lbl" TargetType="Label">
+            <Setter Property="FontSize" Value="Medium"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+        </Style>
+       
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <ListView  x:Name="lstView" 
+                   BackgroundColor="WhiteSmoke" SelectionMode="Single" ItemSelected="ItemSelected" >
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <ContentView Padding="2" BackgroundColor="WhiteSmoke">
+                            <Frame Padding="2"  OutlineColor="DodgerBlue">
+                                <StackLayout Orientation="Horizontal"  Margin="2" >
+                                    <Label Text = "{Binding Name}" 
+                                           Style="{StaticResource lbl}" HorizontalOptions="StartAndExpand"/>
+                                    <Image Source="{Binding Image}" HorizontalOptions="EndAndExpand"/>
+                                </StackLayout>
+                            </Frame>
+                        </ContentView>
+                               
+                            
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ContentPage.Content>
+</ContentPage>

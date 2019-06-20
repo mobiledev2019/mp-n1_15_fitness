@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BTL_LTDD.AdultFitness"
+             Title="Adult Fitness"
+             BackgroundColor="WhiteSmoke">
+    <ContentPage.Resources>
+        <Style TargetType="{x:Type Label}">
+            <Setter Property="FontSize" Value="Large"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+        </Style>
+
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <ListView  x:Name="lstView" BackgroundColor="WhiteSmoke" ItemSelected="DaySelected">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <ContentView Padding="2" BackgroundColor="WhiteSmoke">
+                            <Frame Padding="2"  OutlineColor="DodgerBlue">
+                                <StackLayout Orientation="Horizontal">
+                                    <Label Text = "{Binding Name}" 
+                                           HorizontalOptions="StartAndExpand"/>
+                                    <Image Source="{Binding Image}" HorizontalOptions="EndAndExpand"/>
+                                </StackLayout>
+                            </Frame>
+                        </ContentView>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+    </ContentPage.Content>
+</ContentPage>
